@@ -1,0 +1,63 @@
+_Z14DoAnotherStuffRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE:
+   11|     27|size_t DoAnotherStuff(const std::string &str) {
+   12|     27|  std::string augument_string = str+str;
+   13|     27|  return DoStuff(augument_string);
+   14|     27|}
+
+LLVMFuzzerTestOneInput:
+   10|     29|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   11|     29|  if (size < 2) {
+  ------------------
+  |  Branch (11:7): [True: 0, False: 29]
+  ------------------
+   12|      0|    return 0;
+   13|      0|  }
+   14|     29|  if (data[1] != 'b') {
+  ------------------
+  |  Branch (14:7): [True: 2, False: 27]
+  ------------------
+   15|      2|    return 0;
+   16|      2|  }
+   17|     27|  std::string str(reinterpret_cast<const char *>(data), size);
+   18|     27|  DoAnotherStuff(str);  
+   19|     27|  if (data[0] == 'a') {
+  ------------------
+  |  Branch (19:7): [True: 0, False: 27]
+  ------------------
+   20|      0|    return 0;
+   21|      0|  }
+   22|     27|  return 0;
+   23|     27|}
+
+_Z7DoStuffRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE:
+   11|     27|size_t DoStuff(const std::string &str) {
+   12|     27|  std::vector<int> Vec({0, 1, 2, 3, 4});
+   13|     27|  size_t Idx = 0;
+   14|     27|  if (str.size() > 5)
+  ------------------
+  |  Branch (14:7): [True: 26, False: 1]
+  ------------------
+   15|     26|    Idx++;
+   16|     27|  if (str.find("foo") != std::string::npos)
+  ------------------
+  |  Branch (16:7): [True: 10, False: 17]
+  ------------------
+   17|     10|    Idx++;
+   18|     27|  if (str.find("bar") != std::string::npos)
+  ------------------
+  |  Branch (18:7): [True: 14, False: 13]
+  ------------------
+   19|     14|    Idx++;
+   20|     27|  if (str.find("ouch") != std::string::npos)
+  ------------------
+  |  Branch (20:7): [True: 9, False: 18]
+  ------------------
+   21|      9|    Idx++;
+   22|     27|  if (str.find("omg") != std::string::npos)
+  ------------------
+  |  Branch (22:7): [True: 3, False: 24]
+  ------------------
+   23|      3|    Idx++;
+   24|     27|  return Vec[Idx];
+   25|     27|}
+

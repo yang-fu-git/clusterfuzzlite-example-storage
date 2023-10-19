@@ -1,2 +1,3 @@
 do_stuff_fuzzer
-subscriber_member_function_fuzzer
+do_another_stuff_fuzzer
+example_fuzzer
