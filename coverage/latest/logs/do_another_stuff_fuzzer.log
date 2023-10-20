@@ -1,23 +1,931 @@
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 2129103557
+INFO: Seed: 2675306379
 INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
 INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
 MERGE-OUTER: 29 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 2129118342
+INFO: Seed: 2675318996
 INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
 INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge99.txt'
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
 MERGE-INNER: 29 total files; 0 processed earlier; will process 29 files now
 #1	pulse  cov: 3 ft: 3 exec/s: 0 rss: 27Mb
-#2	pulse  cov: 3 ft: 3 exec/s: 0 rss: 27Mb
-#4	pulse  cov: 3 ft: 3 exec/s: 0 rss: 27Mb
-#8	pulse  cov: 3 ft: 3 exec/s: 0 rss: 27Mb
-#16	pulse  cov: 5 ft: 5 exec/s: 0 rss: 27Mb
-#29	DONE   cov: 5 ft: 5 exec/s: 0 rss: 27Mb
-MERGE-OUTER: successful in 1 attempt(s)
-MERGE-OUTER: the control file has 3593 bytes
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==105==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f8e8e8386f5 bp 0x7ffdcdcacb30 sp 0x7ffdcdcac5b8 T105)
+==105==The signal is caused by a READ memory access.
+==105==Hint: address points to the zero page.
+    #0 0x7f8e8e8386f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f8e8e728d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f8e8e711d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f8e8e6d4082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==105==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0xae,
+\212b\256
+artifact_prefix='./'; Test unit written to ./crash-a5bd22b5f64ae055387ebf8681dec4071852ceb8
+Base64: imKu
+MERGE-OUTER: attempt 2
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2675914455
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/a5bd22b5f64ae055387ebf8681dec4071852ceb8' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 2 processed earlier; will process 27 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==135==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7f0beb9d36f5 bp 0x7ffc6a2bbee0 sp 0x7ffc6a2bb968 T135)
+==135==The signal is caused by a READ memory access.
+==135==Hint: address points to the zero page.
+    #0 0x7f0beb9d36f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f0beb8c3d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f0beb8acd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f0beb86f082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==135==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,
+\012bar
+artifact_prefix='./'; Test unit written to ./crash-4e2cb8dda69a5b48c82cfff2b17de79eaeefff4b
+Base64: CmJhcg==
+MERGE-OUTER: attempt 3
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2676517473
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/4e2cb8dda69a5b48c82cfff2b17de79eaeefff4b' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 3 processed earlier; will process 26 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==139==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f857dac56f5 bp 0x7ffd268ab340 sp 0x7ffd268aadc8 T139)
+==139==The signal is caused by a READ memory access.
+==139==Hint: address points to the zero page.
+    #0 0x7f857dac56f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f857d9b5d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f857d99ed3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f857d961082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==139==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0xae,0x72,
+\212b\256r
+artifact_prefix='./'; Test unit written to ./crash-f92893d7e5665803754cff1d57dfbb8c5b85aee6
+Base64: imKucg==
+MERGE-OUTER: attempt 4
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2677099954
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/f92893d7e5665803754cff1d57dfbb8c5b85aee6' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 4 processed earlier; will process 25 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==143==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f491a5366f5 bp 0x7ffc07877720 sp 0x7ffc078771a8 T143)
+==143==The signal is caused by a READ memory access.
+==143==Hint: address points to the zero page.
+    #0 0x7f491a5366f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f491a426d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f491a40fd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f491a3d2082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==143==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x6,0xff,0xfd,
+\212b2\006\377\375
+artifact_prefix='./'; Test unit written to ./crash-e74f7f8bdd536c92cf7af2d6148f4905af07a981
+Base64: imIyBv/9
+MERGE-OUTER: attempt 5
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2677699693
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/e74f7f8bdd536c92cf7af2d6148f4905af07a981' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 5 processed earlier; will process 24 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==147==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f99ddd556f5 bp 0x7fff36015fd0 sp 0x7fff36015a58 T147)
+==147==The signal is caused by a READ memory access.
+==147==Hint: address points to the zero page.
+    #0 0x7f99ddd556f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f99ddc45d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f99ddc2ed3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f99ddbf1082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==147==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0x62,0xae,0x72,
+\212b2rb\256r
+artifact_prefix='./'; Test unit written to ./crash-cc1b75c4f98674257bed8e5159a4e2ebd61bec59
+Base64: imIycmKucg==
+MERGE-OUTER: attempt 6
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2678299433
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/cc1b75c4f98674257bed8e5159a4e2ebd61bec59' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 6 processed earlier; will process 23 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==151==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7fc7d147a6f5 bp 0x7ffc3a776460 sp 0x7ffc3a775ee8 T151)
+==151==The signal is caused by a READ memory access.
+==151==Hint: address points to the zero page.
+    #0 0x7fc7d147a6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fc7d136ad14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fc7d1353d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fc7d1316082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==151==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0xae,0x62,0x72,
+\212b2r\256br
+artifact_prefix='./'; Test unit written to ./crash-1989eec00b8ea8412d8c717d0f0f820b06ea1a15
+Base64: imIycq5icg==
+MERGE-OUTER: attempt 7
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2678882217
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/1989eec00b8ea8412d8c717d0f0f820b06ea1a15' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 7 processed earlier; will process 22 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==155==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f32e17ce6f5 bp 0x7ffd8fa06af0 sp 0x7ffd8fa06578 T155)
+==155==The signal is caused by a READ memory access.
+==155==Hint: address points to the zero page.
+    #0 0x7f32e17ce6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f32e16bed14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f32e16a7d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f32e166a082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==155==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0x62,0xe8,0xae,0x72,
+\212b2rb\350\256r
+artifact_prefix='./'; Test unit written to ./crash-3c6c66f2da69aefcaf808f3ab29768a86f36bd72
+Base64: imIycmLornI=
+MERGE-OUTER: attempt 8
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2679499406
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/3c6c66f2da69aefcaf808f3ab29768a86f36bd72' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 8 processed earlier; will process 21 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==187==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7fab0350a6f5 bp 0x7ffc19e26940 sp 0x7ffc19e263c8 T187)
+==187==The signal is caused by a READ memory access.
+==187==Hint: address points to the zero page.
+    #0 0x7fab0350a6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fab033fad14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fab033e3d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fab033a6082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==187==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0xae,0x62,0x66,0x6f,0x6f,0x72,
+\212b2r\256bfoor
+artifact_prefix='./'; Test unit written to ./crash-b347b0683c089c440c2359404835da61e7643d1a
+Base64: imIycq5iZm9vcg==
+MERGE-OUTER: attempt 9
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2680094092
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/b347b0683c089c440c2359404835da61e7643d1a' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 9 processed earlier; will process 20 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==205==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7fc45b8f46f5 bp 0x7fff132b36d0 sp 0x7fff132b3158 T205)
+==205==The signal is caused by a READ memory access.
+==205==Hint: address points to the zero page.
+    #0 0x7fc45b8f46f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fc45b7e4d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fc45b7cdd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fc45b790082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==205==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x62,0x32,0x72,0x62,0x72,0x62,0xe8,0xae,0x72,
+\212b2b2rbrb\350\256r
+artifact_prefix='./'; Test unit written to ./crash-5907efd1bdf550838c4452ae89149be55fcd3145
+Base64: imIyYjJyYnJi6K5y
+MERGE-OUTER: attempt 10
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2680695588
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/5907efd1bdf550838c4452ae89149be55fcd3145' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 10 processed earlier; will process 19 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==209==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7f3a231296f5 bp 0x7fff24d48130 sp 0x7fff24d47bb8 T209)
+==209==The signal is caused by a READ memory access.
+==209==Hint: address points to the zero page.
+    #0 0x7f3a231296f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f3a23019d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f3a23002d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f3a22fc5082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==209==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0x8a,0x62,0x62,0xe8,0xae,0x66,0x6f,0x6f,0x0,0x0,0x0,
+\212b2r\212bb\350\256foo\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-62994639868fe7ff0d11861fd89d9172d79729fd
+Base64: imIycopiYuiuZm9vAAAA
+MERGE-OUTER: attempt 11
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2681272358
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/62994639868fe7ff0d11861fd89d9172d79729fd' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 11 processed earlier; will process 18 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==213==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f216c8cb6f5 bp 0x7ffee34d8440 sp 0x7ffee34d7ec8 T213)
+==213==The signal is caused by a READ memory access.
+==213==Hint: address points to the zero page.
+    #0 0x7f216c8cb6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f216c7bbd14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f216c7a4d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f216c767082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==213==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x8a,0x62,0x32,0x72,0x8a,0xae,0x6f,0x62,0xe8,0x0,0x66,0x62,0x6f,0x0,0x0,
+\212b2r\212\256ob\350\000fbo\000\000
+artifact_prefix='./'; Test unit written to ./crash-533de191044fc065b821c7ac554b99ced54eed1b
+Base64: imIycoqub2LoAGZibwAA
+MERGE-OUTER: attempt 12
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2681884910
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/533de191044fc065b821c7ac554b99ced54eed1b' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 12 processed earlier; will process 17 files now
+#1	pulse  cov: 2 ft: 2 exec/s: 0 rss: 27Mb
+#2	pulse  cov: 2 ft: 2 exec/s: 0 rss: 27Mb
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==217==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7f03c93c66f5 bp 0x7ffcc2a39aa0 sp 0x7ffcc2a39528 T217)
+==217==The signal is caused by a READ memory access.
+==217==Hint: address points to the zero page.
+    #0 0x7f03c93c66f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f03c92b6d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f03c929fd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f03c9262082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==217==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x62,0x32,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x66,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,
+\012bar\000\000\000b2\001\000\000\000\000\000\000\000\000\000ouchf\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000ouch\000\000
+artifact_prefix='./'; Test unit written to ./crash-62f21fd303d4b484ec69f8226682f22a6f007135
+Base64: CmJhcgAAAGIyAQAAAAAAAAAAAG91Y2hmAAAAAAAAAAAAAAAAZm9vAAAAAAAAAAAAb3VjaAAA
+MERGE-OUTER: attempt 13
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2682487954
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/62f21fd303d4b484ec69f8226682f22a6f007135' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 15 processed earlier; will process 14 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==221==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7fef271236f5 bp 0x7ffe96fb4ef0 sp 0x7ffe96fb4978 T221)
+==221==The signal is caused by a READ memory access.
+==221==Hint: address points to the zero page.
+    #0 0x7fef271236f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fef27013d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fef26ffcd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fef26fbf082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==221==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-4fb5e1818d163dfdcfc47a41eef6fa2c3738c443
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAG91Y2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+MERGE-OUTER: attempt 14
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2683056273
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/4fb5e1818d163dfdcfc47a41eef6fa2c3738c443' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 16 processed earlier; will process 13 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==225==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7f04d613b6f5 bp 0x7ffefe4ed5b0 sp 0x7ffefe4ed038 T225)
+==225==The signal is caused by a READ memory access.
+==225==Hint: address points to the zero page.
+    #0 0x7f04d613b6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f04d602bd14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f04d6014d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f04d5fd7082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==225==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-fccdfef8733a21d467873d6a391811bc83aecfbe
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MERGE-OUTER: attempt 15
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2683645817
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/fccdfef8733a21d467873d6a391811bc83aecfbe' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 17 processed earlier; will process 12 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==232==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7f277487b6f5 bp 0x7fff4aa22130 sp 0x7fff4aa21bb8 T232)
+==232==The signal is caused by a READ memory access.
+==232==Hint: address points to the zero page.
+    #0 0x7f277487b6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f277476bd14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f2774754d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f2774717082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==232==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-d811615371004f6f04a2916fc0fe704dfd878260
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZm9vAAAAAAAAAAAAAAAA
+MERGE-OUTER: attempt 16
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2684244165
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/d811615371004f6f04a2916fc0fe704dfd878260' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 18 processed earlier; will process 11 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==236==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7f9eb2ec66f5 bp 0x7ffe4a0f4930 sp 0x7ffe4a0f43b8 T236)
+==236==The signal is caused by a READ memory access.
+==236==Hint: address points to the zero page.
+    #0 0x7f9eb2ec66f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f9eb2db6d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f9eb2d9fd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f9eb2d62082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==236==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x6d,0x67,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000omg\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-d77e5c2adda94d46f6ca42942ee0d4893557df9b
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb21nAAAAAAAAAAAAAAAAAAAAZm9vAAAAAAAAAAAAAAAA
+MERGE-OUTER: attempt 17
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2684809142
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/d77e5c2adda94d46f6ca42942ee0d4893557df9b' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 19 processed earlier; will process 10 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==240==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7ff4004186f5 bp 0x7fff2975c730 sp 0x7fff2975c1b8 T240)
+==240==The signal is caused by a READ memory access.
+==240==Hint: address points to the zero page.
+    #0 0x7ff4004186f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7ff400308d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7ff4002f1d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7ff4002b4082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==240==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x41,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000fAo\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-07c72b01c47b6c2db7b518fec8f24bc0437bf3bc
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZkFvAAAAAAAAAAAAAAAA
+MERGE-OUTER: attempt 18
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2685397021
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/07c72b01c47b6c2db7b518fec8f24bc0437bf3bc' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 20 processed earlier; will process 9 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==244==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7feb9fd466f5 bp 0x7fff4075bd90 sp 0x7fff4075b818 T244)
+==244==The signal is caused by a READ memory access.
+==244==Hint: address points to the zero page.
+    #0 0x7feb9fd466f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7feb9fc36d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7feb9fc1fd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7feb9fbe2082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==244==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x30,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000foo\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\0000\000\000ouch\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-035ba19525e5cf0cd4ba0e371d76dfaeaeef5027
+Base64: CmJhcgAAAGZvbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAG91Y2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+MERGE-OUTER: attempt 19
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2685974403
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/035ba19525e5cf0cd4ba0e371d76dfaeaeef5027' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 21 processed earlier; will process 8 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==248==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7faa292116f5 bp 0x7ffe34c3da60 sp 0x7ffe34c3d4e8 T248)
+==248==The signal is caused by a READ memory access.
+==248==Hint: address points to the zero page.
+    #0 0x7faa292116f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7faa29101d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7faa290ead3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7faa290ad082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==248==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x10,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x6f,0x6d,0x67,0x0,0x0,0x0,0x8a,0x62,0x32,0x72,0x8a,0xae,0x6f,0x62,0xe8,0x0,0x66,0x62,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\020\000\000\000\000\000\000\000foo\000\000\000\000omg\000\000\000\212b2r\212\256ob\350\000fbo\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-ca1db1a8454cba97ea169d83336a00d42b4f6165
+Base64: CmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAABmb28AAAAAb21nAAAAimIycoqub2LoAGZibwAAAAAAAAAAAAAAAAAA
+MERGE-OUTER: attempt 20
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2686563225
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/ca1db1a8454cba97ea169d83336a00d42b4f6165' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 22 processed earlier; will process 7 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==252==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7fccb55c76f5 bp 0x7ffe69a76ad0 sp 0x7ffe69a76558 T252)
+==252==The signal is caused by a READ memory access.
+==252==Hint: address points to the zero page.
+    #0 0x7fccb55c76f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fccb54b7d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fccb54a0d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fccb5463082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==252==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x62,0x32,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,
+\012bar\000\000\000b2\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000ouch\000\000
+artifact_prefix='./'; Test unit written to ./crash-d32045bf278a2ea4aa9477b04744d6fdb6388a07
+Base64: CmJhcgAAAGIyAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvdWNoAAAAAAAAAAAAAAAAZm9vAAAAAAAAAAAAb3VjaAAA
+MERGE-OUTER: attempt 21
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2687158013
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/d32045bf278a2ea4aa9477b04744d6fdb6388a07' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 23 processed earlier; will process 6 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==256==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7f7ed3e0b6f5 bp 0x7ffd71ed0a10 sp 0x7ffd71ed0498 T256)
+==256==The signal is caused by a READ memory access.
+==256==Hint: address points to the zero page.
+    #0 0x7f7ed3e0b6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f7ed3cfbd14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f7ed3ce4d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f7ed3ca7082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==256==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x62,0x33,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x66,0x0,0x0,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x2a,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x68,0x0,0x0,
+\012bar\000\000\000b3\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouc\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouchf\000\000\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271*\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271h\000\000
+artifact_prefix='./'; Test unit written to ./crash-7898897d12b63d4e5b0f656d6fbdb5f5fdfd56e4
+Base64: CmJhcgAAAGIzAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvdWMAAAAAAAAAAAAAAAAAAAAAb3VjaGYAALm5ubm5ubm5ubm5ubm5uSq5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubloAAA=
+MERGE-OUTER: attempt 22
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2687737764
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/7898897d12b63d4e5b0f656d6fbdb5f5fdfd56e4' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 24 processed earlier; will process 5 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==260==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7f411cd496f5 bp 0x7fff2831d150 sp 0x7fff2831cbd8 T260)
+==260==The signal is caused by a READ memory access.
+==260==Hint: address points to the zero page.
+    #0 0x7f411cd496f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f411cc39d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f411cc22d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f411cbe5082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==260==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x62,0x33,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x6d,0x6f,0x6d,0x67,0x67,0x0,0x0,0x6f,0x75,0x63,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x66,0x0,0x0,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x2a,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x68,0x0,0x0,
+\012bar\000\000\000b3\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000omomgg\000\000ouc\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouchf\000\000\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271*\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271h\000\000
+artifact_prefix='./'; Test unit written to ./crash-2ff671b2b9b98fd5d1b19ffacbe24df40091d646
+Base64: CmJhcgAAAGIzAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb21vbWdnAABvdWMAAAAAAAAAAAAAAAAAAAAAb3VjaGYAALm5ubm5ubm5ubm5ubm5uSq5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubloAAA=
+MERGE-OUTER: attempt 23
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2688371857
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/2ff671b2b9b98fd5d1b19ffacbe24df40091d646' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 25 processed earlier; will process 4 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==264==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7fc0c71b36f5 bp 0x7fff9bb3ef80 sp 0x7fff9bb3ea08 T264)
+==264==The signal is caused by a READ memory access.
+==264==Hint: address points to the zero page.
+    #0 0x7fc0c71b36f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fc0c70a3d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fc0c708cd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fc0c704f082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==264==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x0,0x0,0x0,0x0,0x0,0x61,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,
+\012ba\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000\000oo\000\000\000\000\000\000\000\000\000o\000\000\000\000\000a\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000\000oo\000\000\000\000\000\000\000\000\000o\000\000\000\000\000\000\000\000\000\000\000ouch\000\000
+artifact_prefix='./'; Test unit written to ./crash-d6f4df41d0f391e5f55623c9cef08659493f6dc0
+Base64: CmJhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvdWNoAAAAb28AAAAAAAAAAABvAAAAAABhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvdWNoAAAAb28AAAAAAAAAAABvAAAAAAAAAAAAAABvdWNoAAA=
+MERGE-OUTER: attempt 24
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2688944303
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/d6f4df41d0f391e5f55623c9cef08659493f6dc0' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 26 processed earlier; will process 3 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==268==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000002 (pc 0x7f4c770486f5 bp 0x7ffef86379f0 sp 0x7ffef8637478 T268)
+==268==The signal is caused by a READ memory access.
+==268==Hint: address points to the zero page.
+    #0 0x7f4c770486f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7f4c76f38d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7f4c76f21d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7f4c76ee4082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==268==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x72,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x41,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x41,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\012bar\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000r\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000fAo\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000fAo\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-1bd0a5a58aa7ba1a497080e9ac7b2092165eb841
+Base64: CmJhcgAAAAAAAAAAAAAAAAAACmJhcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAByAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZkFvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZkFvAAAAAAAAAAAAAAAAAA==
+MERGE-OUTER: attempt 25
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2689537448
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/1bd0a5a58aa7ba1a497080e9ac7b2092165eb841' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 27 processed earlier; will process 2 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==272==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7fb788f126f5 bp 0x7ffc34965240 sp 0x7ffc34964cc8 T272)
+==272==The signal is caused by a READ memory access.
+==272==Hint: address points to the zero page.
+    #0 0x7fb788f126f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fb788e02d14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fb788debd3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fb788dae082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==272==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0xa,0x62,0x61,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x0,0x0,0x0,0x0,0x0,0x61,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x63,0x68,0x0,0x0,0x0,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x63,0x68,0x0,0x0,0x0,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,
+\012ba\012ba\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000\000oo\000\000\000\000\000\000\000\000\000o\000\000\000\000\000a\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000fooch\000\000\000oo\000\000\000\000\000\000\000\000\000o\000\000\000\000\000\000\000\000\000\000\000ouc\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000fooch\000\000\000oo\000\000\000\000\000\000\000\000\000o\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouch\000\000
+artifact_prefix='./'; Test unit written to ./crash-fa93a25a3532f8307168c317473b943be9c0acae
+Base64: CmJhCmJhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb3VjaAAAAG9vAAAAAAAAAAAAbwAAAAAAYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmb29jaAAAAG9vAAAAAAAAAAAAbwAAAAAAAAAAAAAAb3VjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZvb2NoAAAAb28AAAAAAAAAAABvAAAAAAAAAAAAAAAAAABvdWNoAAA=
+MERGE-OUTER: attempt 26
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2690133157
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/fa93a25a3532f8307168c317473b943be9c0acae' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 28 processed earlier; will process 1 files now
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==276==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7fd7bf1db6f5 bp 0x7ffea8be7ad0 sp 0x7ffea8be7558 T276)
+==276==The signal is caused by a READ memory access.
+==276==Hint: address points to the zero page.
+    #0 0x7fd7bf1db6f5  (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #1 0x7fd7bf0cbd14  (/lib/x86_64-linux-gnu/libc.so.6+0x78d14) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #2 0x7fd7bf0b4d3e in printf (/lib/x86_64-linux-gnu/libc.so.6+0x61d3e) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #3 0x4c0ceb in DoStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/my_api.cpp:24:3
+    #4 0x4c0689 in DoAnotherStuff(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/clusterfuzzlite-example/do_another_stuff.cpp:13:10
+    #5 0x4c0430 in LLVMFuzzerTestOneInput /src/clusterfuzzlite-example/do_another_stuff_fuzzer.cpp:18:3
+    #6 0x4262c3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerLoop.cpp:611:15
+    #7 0x42f0b4 in fuzzer::Fuzzer::CrashResistantMergeInternalStep(std::__Fuzzer::basic_string<char, std::__Fuzzer::char_traits<char>, std::__Fuzzer::allocator<char> > const&, bool) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMerge.cpp:235:5
+    #8 0x417159 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerDriver.cpp:885:8
+    #9 0x440802 in main /src/llvm-project/compiler-rt/lib/fuzzer/FuzzerMain.cpp:20:10
+    #10 0x7fd7bf077082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340)
+    #11 0x407bed in _start (build-out/do_another_stuff_fuzzer+0x407bed)
+
+DEDUP_TOKEN: printf
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x1886f5) (BuildId: e678fe54a5d2c2092f8e47eb0b33105e380f7340) 
+==276==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x62,0x33,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0x68,0x66,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x68,0x66,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x6f,0x75,0x63,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0x2a,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xb9,0xa,0x62,0x61,0x72,0x0,0x0,0x0,0x66,0x6f,0x6f,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xb9,0xb9,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x30,0x0,0x0,0x6f,0x75,0x63,0x68,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xb9,0x68,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+\012bar\000\000\000b3\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000\000\000\000\000ouc\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000ouchf\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000ouc\271\271\271\271\271\271\271\271\271\271\271\271\271hf\000\000\000\000\000\000\000\000\000\000\000\000foo\000\000\000\000\000\000\000\000\000ouc\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271*\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\271\012bar\000\000\000foo\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\271\271\000\000\000\000\000\000\000\000\0000\000\000ouch\000\000\000\000\000\000\000\000\000\000\000\000\000\000\271h\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-b348a58c236ed077839f1e57792c802470f8cdbb
+Base64: CmJhcgAAAGIzAQAAAAAAAAAAAAAAAAAAAGZvbwAAAAAAAAAAAAAAAABvdWMAAAAAAAAAAAAAAAAAAAAAb3VjaGYAAAAAAAAAAAAAAABmb28AAAAAAAAAAABvdWO5ubm5ubm5ubm5ubm5aGYAAAAAAAAAAAAAAABmb28AAAAAAAAAAABvdWO5ubm5ubm5ubm5ubm5ubkqubm5ubm5ubm5ubm5ubm5ubm5ubm5CmJhcgAAAGZvbwAAAAAAAAAAAAAAAAAAALm5AAAAAAAAAAAAMAAAb3VjaAAAAAAAAAAAAAAAAAAAuWgAAAAAAAAAAAAAAAAAAAAAAAA=
+MERGE-OUTER: attempt 27
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2690732499
+INFO: Loaded 1 modules   (12 inline 8-bit counters): 12 [0x581078, 0x581084), 
+INFO: Loaded 1 PC tables (12 PCs): 12 [0x542a38,0x542af8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge98.txt'
+MERGE-INNER: '/github/workspace/cifuzz-corpus/do_another_stuff_fuzzer/b348a58c236ed077839f1e57792c802470f8cdbb' caused a failure at the previous merge step
+MERGE-INNER: 29 total files; 29 processed earlier; will process 0 files now
+#0	DONE   exec/s: 0 rss: 27Mb
+MERGE-OUTER: successful in 27 attempt(s)
+MERGE-OUTER: the control file has 3272 bytes
 MERGE-OUTER: consumed 0Mb (27Mb rss) to parse the control file
-MERGE-OUTER: 3 new files with 5 new features added; 5 new coverage edges
+MERGE-OUTER: 2 new files with 4 new features added; 4 new coverage edges
