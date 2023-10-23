@@ -1,15 +1,15 @@
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 414626021
+INFO: Seed: 495408097
 INFO: Loaded 1 modules   (11 inline 8-bit counters): 11 [0x587dd0, 0x587ddb), 
 INFO: Loaded 1 PC tables (11 PCs): 11 [0x54a268,0x54a318), 
 MERGE-OUTER: 4 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 414636738
+INFO: Seed: 495417707
 INFO: Loaded 1 modules   (11 inline 8-bit counters): 11 [0x587dd0, 0x587ddb), 
 INFO: Loaded 1 PC tables (11 PCs): 11 [0x54a268,0x54a318), 
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge71.txt'
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge73.txt'
 MERGE-INNER: 4 total files; 0 processed earlier; will process 4 files now
 #1	pulse  cov: 2 ft: 2 exec/s: 0 rss: 27Mb
 #2	pulse  cov: 3 ft: 3 exec/s: 0 rss: 27Mb
