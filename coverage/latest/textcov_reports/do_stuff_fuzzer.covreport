@@ -13,7 +13,7 @@ LLVMFuzzerTestOneInput:
    15|      1|    return 0;
    16|      1|  }
    17|      2|  std::string str(reinterpret_cast<const char *>(data), size);
-   18|       |  // DoStuff(str);  // Disregard the output.
+   18|      2|  DoStuff(str);  // Disregard the output.
    19|      2|  if (data[0] == 'a') {
   ------------------
   |  Branch (19:7): [True: 0, False: 2]
@@ -22,4 +22,50 @@ LLVMFuzzerTestOneInput:
    21|      0|  }
    22|      2|  return 0;
    23|      2|}
+
+_Z7DoStuffRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE:
+   11|      2|size_t DoStuff(const std::string &str) {
+   12|      2|  std::vector<int> Vec({0, 1, 2, 3, 4});
+   13|      2|  size_t Idx = 0;
+   14|      2|  if (str.size() > 5)
+  ------------------
+  |  Branch (14:7): [True: 1, False: 1]
+  ------------------
+   15|      1|    Idx++;
+   16|      2|  if (str.find("foo") != std::string::npos)
+  ------------------
+  |  Branch (16:7): [True: 0, False: 2]
+  ------------------
+   17|      0|    Idx++;
+   18|      2|  if (str.find("bar") != std::string::npos)
+  ------------------
+  |  Branch (18:7): [True: 1, False: 1]
+  ------------------
+   19|      1|    Idx++;
+   20|      2|  if (str.find("ouch") != std::string::npos)
+  ------------------
+  |  Branch (20:7): [True: 0, False: 2]
+  ------------------
+   21|      0|    Idx++;
+   22|      2|  if (str.find("omg") != std::string::npos)
+  ------------------
+  |  Branch (22:7): [True: 0, False: 2]
+  ------------------
+   23|      0|    Idx++;
+   24|      2|  if (str.find("on") != std::string::npos)
+  ------------------
+  |  Branch (24:7): [True: 0, False: 2]
+  ------------------
+   25|      0|    Idx++;
+   26|       |  // This is the bug fix: the index can be out of bounds.
+   27|      2|  if (Idx >= 5)
+  ------------------
+  |  Branch (27:7): [True: 0, False: 2]
+  ------------------
+   28|      0|    {
+   29|      0|      printf("Idx too large\n");
+   30|      0|      return 0;
+   31|      0|    }
+   32|      2|  return Vec[Idx];
+   33|      2|}
 
