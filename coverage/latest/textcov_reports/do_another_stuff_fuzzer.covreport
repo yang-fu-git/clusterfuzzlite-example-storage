@@ -1,0 +1,25 @@
+LLVMFuzzerTestOneInput:
+   10|     47|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   11|     47|  if (size < 2) {
+  ------------------
+  |  Branch (11:7): [True: 1, False: 46]
+  ------------------
+   12|      1|    return 0;
+   13|      1|  }
+   14|     46|  if (data[1] != 'b') {
+  ------------------
+  |  Branch (14:7): [True: 4, False: 42]
+  ------------------
+   15|      4|    return 0;
+   16|      4|  }
+   17|     42|  std::string str(reinterpret_cast<const char *>(data), size);
+   18|       |  // DoAnotherStuff(str);  
+   19|     42|  if (data[0] == 'a') {
+  ------------------
+  |  Branch (19:7): [True: 0, False: 42]
+  ------------------
+   20|      0|    return 0;
+   21|      0|  }
+   22|     42|  return 0;
+   23|     42|}
+
