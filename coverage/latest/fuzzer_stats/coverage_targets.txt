@@ -1,3 +1,2 @@
 do_another_stuff_fuzzer
-example_fuzzer
 do_stuff_fuzzer
