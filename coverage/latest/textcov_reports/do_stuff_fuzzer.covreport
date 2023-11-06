@@ -1,71 +1,71 @@
 LLVMFuzzerTestOneInput:
-   10|     44|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
-   11|     44|  if (size < 2) {
+   10|     50|extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+   11|     50|  if (size < 2) {
   ------------------
-  |  Branch (11:7): [True: 1, False: 43]
+  |  Branch (11:7): [True: 1, False: 49]
   ------------------
    12|      1|    return 0;
    13|      1|  }
-   14|     43|  if (data[1] != 'b') {
+   14|     49|  if (data[1] != 'b') {
   ------------------
-  |  Branch (14:7): [True: 1, False: 42]
+  |  Branch (14:7): [True: 1, False: 48]
   ------------------
    15|      1|    return 0;
    16|      1|  }
-   17|     42|  std::string str(reinterpret_cast<const char *>(data), size);
-   18|     42|  DoStuff(str);  // Disregard the output.
-   19|     42|  if (data[0] == 'a') {
+   17|     48|  std::string str(reinterpret_cast<const char *>(data), size);
+   18|     48|  DoStuff(str);  // Disregard the output.
+   19|     48|  if (data[0] == 'a') {
   ------------------
-  |  Branch (19:7): [True: 0, False: 42]
+  |  Branch (19:7): [True: 0, False: 48]
   ------------------
    20|      0|    return 0;
    21|      0|  }
-   22|     42|  return 0;
-   23|     42|}
+   22|     48|  return 0;
+   23|     48|}
 
 _Z7DoStuffRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE:
-   11|     42|size_t DoStuff(const std::string &str) {
-   12|     42|  std::vector<int> Vec({0, 1, 2, 3, 4});
-   13|     42|  size_t Idx = 0;
-   14|     42|  if (str.size() > 5)
+   11|     48|size_t DoStuff(const std::string &str) {
+   12|     48|  std::vector<int> Vec({0, 1, 2, 3, 4});
+   13|     48|  size_t Idx = 0;
+   14|     48|  if (str.size() > 5)
   ------------------
-  |  Branch (14:7): [True: 33, False: 9]
+  |  Branch (14:7): [True: 39, False: 9]
   ------------------
-   15|     33|    Idx++;
-   16|     42|  if (str.find("foo") != std::string::npos)
+   15|     39|    Idx++;
+   16|     48|  if (str.find("foo") != std::string::npos)
   ------------------
-  |  Branch (16:7): [True: 5, False: 37]
+  |  Branch (16:7): [True: 7, False: 41]
   ------------------
-   17|      5|    Idx++;
-   18|     42|  if (str.find("bar") != std::string::npos)
+   17|      7|    Idx++;
+   18|     48|  if (str.find("bar") != std::string::npos)
   ------------------
-  |  Branch (18:7): [True: 2, False: 40]
+  |  Branch (18:7): [True: 4, False: 44]
   ------------------
-   19|      2|    Idx++;
-   20|     42|  if (str.find("ouch") != std::string::npos)
+   19|      4|    Idx++;
+   20|     48|  if (str.find("ouch") != std::string::npos)
   ------------------
-  |  Branch (20:7): [True: 3, False: 39]
+  |  Branch (20:7): [True: 4, False: 44]
   ------------------
-   21|      3|    Idx++;
-   22|     42|  if (str.find("omg") != std::string::npos)
+   21|      4|    Idx++;
+   22|     48|  if (str.find("omg") != std::string::npos)
   ------------------
-  |  Branch (22:7): [True: 3, False: 39]
+  |  Branch (22:7): [True: 4, False: 44]
   ------------------
-   23|      3|    Idx++;
-   24|     42|  if (str.find("on") != std::string::npos)
+   23|      4|    Idx++;
+   24|     48|  if (str.find("on") != std::string::npos)
   ------------------
-  |  Branch (24:7): [True: 1, False: 41]
+  |  Branch (24:7): [True: 3, False: 45]
   ------------------
-   25|      1|    Idx++;
+   25|      3|    Idx++;
    26|       |  // This is the bug fix: the index can be out of bounds.
-   27|     42|  if (Idx >= 5)
+   27|     48|  if (Idx >= 5)
   ------------------
-  |  Branch (27:7): [True: 1, False: 41]
+  |  Branch (27:7): [True: 3, False: 45]
   ------------------
-   28|      1|    {
-   29|      1|      printf("Idx too large\n");
-   30|      1|      return 0;
-   31|      1|    }
-   32|     41|  return Vec[Idx];
-   33|     42|}
+   28|      3|    {
+   29|      3|      printf("Idx too large\n");
+   30|      3|      return 0;
+   31|      3|    }
+   32|     45|  return Vec[Idx];
+   33|     48|}
 
